@@ -4,53 +4,56 @@ import icmp_echo
 
 
 @pytest.mark.parametrize(
-    'ip_address,expected_response',
+    'expected_response',
     [
         pytest.param(
-            '8.8.8.8',
             {
                 'ip': '8.8.8.8',
                 'bytes': 32,
                 'time': '33ms',
                 'TTL': 115
             },
-            id='Given an ip is provided, When main is called for icmp_echo, Then the system returns the ip, bytes, time, and TTL of the ping call.'
+            id='Given an ip is provided,'
+               ' When main is called for icmp_echo,'
+               ' Then the system returns the ip, bytes, time, and TTL of the ping call.'
         ),
         pytest.param(
-            '4.4.4.4',
             {
                 'ip': '4.4.4.4',
                 'bytes': 32,
                 'time': '33ms',
                 'TTL': 115
             },
-            id='Given a different ip is provided, When main is called for icmp_echo, Then the system returns the different ip, bytes, time, and TTL of the ping call.'
+            id='Given a different ip is provided,'
+               ' When main is called for icmp_echo,'
+               ' Then the system returns the different ip, bytes, time, and TTL of the ping call.'
         ),
         pytest.param(
-            '8.8.8.8',
             {
                 'ip': '8.8.8.8',
                 'bytes': 32,
                 'time': '330ms',
                 'TTL': 115
             },
-            id='Given a slower response from ping command, When main is called for icmp_echo, Then the system returns the ip, bytes,  and the slower response time, and TTL of the ping call.'
+            id='Given a slower response from ping command, '
+               'When main is called for icmp_echo,'
+               ' Then the system returns the ip, bytes,  and the slower response time, and TTL of the ping call.'
         )
     ],
 )
-def test_icmp_on_windows(ip_address, expected_response):
+def test_icmp_on_windows(expected_response):
     # Setup
     def ping(ip):
         return f'''
-Pinging {ip} with 32 bytes of data:
-Reply from {ip}: bytes=32 time={expected_response['time']} TTL=115
+Pinging {expected_response['ip']} with 32 bytes of data:
+Reply from {expected_response['ip']}: bytes=32 time={expected_response['time']} TTL=115
 
-Ping statistics for {ip}:
+Ping statistics for {expected_response['ip']}:
     Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
 Approximate round trip times in milli-seconds:
     Minimum = 330ms, Maximum = 330ms, Average = 330ms'''
     # Test / Verify
-    assert icmp_echo.main(ping_command=ping)(ip_address=ip_address) == expected_response
+    assert icmp_echo.main(ping_command=ping)(ip_address=expected_response['ip']) == expected_response
 
 
 @pytest.mark.parametrize(
