@@ -62,7 +62,7 @@ Approximate round trip times in milli-seconds:
         ),
     ],
 )
-def test_icmp_on_windows(ip_address, expected_response):
+def test_failing_icmp_on_windows(ip_address, expected_response):
     # Setup
     def ping(ip):
         return f'''Pinging {ip} with 32 bytes of data:
