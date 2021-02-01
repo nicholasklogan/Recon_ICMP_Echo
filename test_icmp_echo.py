@@ -57,10 +57,10 @@ Approximate round trip times in milli-seconds:
             id='Given a slower response from ping command, When main is called for icmp_echo, Then the system returns the ip, bytes,  and the slower response time, and TTL of the ping call.'
         ),
         pytest.param(
-            '''Pinging 8.8.8.4 with 32 bytes of data:
+            '''Pinging 8.8.8.8 with 32 bytes of data:
 Request timed out.
 
-Ping statistics for 8.8.8.4:
+Ping statistics for 8.8.8.8:
     Packets: Sent = 1, Received = 0, Lost = 1 (100% loss),''',
             '8.8.8.8',
             {},
