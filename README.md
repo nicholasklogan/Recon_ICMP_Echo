@@ -1,5 +1,7 @@
 _Currently configured for windows only._
 
+Intended for use in package for Pen Testing Recon.
+
 **Installation**
 ---
 1. Install python >= 3.9
