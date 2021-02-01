@@ -6,7 +6,13 @@ import icmp_echo
     'ping_response,ip_address,expected_response',
     [
         pytest.param(
-            'Reply from 8.8.8.8: bytes=32 time=33ms TTL=115',
+            '''Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=33ms TTL=115
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 33ms, Maximum = 33ms, Average = 33ms''',
             '8.8.8.8',
             {
                 'ip': '8.8.8.8',
@@ -17,7 +23,13 @@ import icmp_echo
             id='Given an ip is provided, When main is called for icmp_echo, Then the system returns the ip, bytes, time, and TTL of the ping call.'
         ),
         pytest.param(
-            'Reply from 4.4.4.4: bytes=32 time=33ms TTL=115',
+            '''Pinging 4.4.4.4 with 32 bytes of data:
+Reply from 4.4.4.4: bytes=32 time=33ms TTL=115
+
+Ping statistics for 4.4.4.4:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 33ms, Maximum = 33ms, Average = 33ms''',
             '4.4.4.4',
             {
                 'ip': '4.4.4.4',
@@ -28,7 +40,13 @@ import icmp_echo
             id='Given a different ip is provided, When main is called for icmp_echo, Then the system returns the different ip, bytes, time, and TTL of the ping call.'
         ),
         pytest.param(
-            'Reply from 8.8.8.8: bytes=32 time=330ms TTL=115',
+            '''Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=330ms TTL=115
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 330ms, Maximum = 330ms, Average = 330ms''',
             '8.8.8.8',
             {
                 'ip': '8.8.8.8',
