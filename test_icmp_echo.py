@@ -42,7 +42,7 @@ def test_icmp_on_windows(ip_address, expected_response):
     # Setup
     def ping(ip):
         return f'''Pinging {ip} with 32 bytes of data:
-Reply from {ip}: bytes=32 time=330ms TTL=115
+Reply from {ip}: bytes=32 time={expected_response['time']} TTL=115
 
 Ping statistics for {ip}:
     Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
