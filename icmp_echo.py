@@ -1,4 +1,4 @@
-
+#
 
 def main(ping_command):
     def true_main(ip_address):
@@ -15,10 +15,15 @@ def main(ping_command):
 
 if __name__ == "__main__":
     import subprocess
+    import sys
 
     def ping(ip):
         p = subprocess.Popen(['ping', '/n', '1', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = p.communicate()
         return stdout.decode('utf-8')
 
-    print(main(ping_command=ping)('8.8.8.8'))
+
+    try:
+        print(main(ping_command=ping)(sys.argv[1]))
+    except:
+        print("provide an ip address i.e. `python icmp_echo.py 8.8.8.8`")
