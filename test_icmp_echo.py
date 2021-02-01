@@ -32,3 +32,19 @@ def test_different_ip_address_icmp_success_on_windows_with_different_ip():
             'TTL': 115
         }
     )
+
+def test_slower_response_icmp_success_on_windows_with_slow_response_recorded():
+    """
+    Given a slower response from ping command,
+    When main is called for icmp_echo,
+    Then the system returns the ip, bytes,  and the slower response time, and TTL of the ping call.
+    """
+    # Test / Verify
+    assert icmp_echo.main(lambda: "Reply from 8.8.8.8: bytes=32 time=330ms TTL=115")('8.8.8.8') == (
+        {
+            'ip': '8.8.8.8',
+            'bytes': 32,
+            'time': '330ms',
+            'TTL': 115
+        }
+    )
