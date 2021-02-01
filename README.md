@@ -7,14 +7,12 @@ Intended for use in package for Pen Testing Recon.
 1. Install python >= 3.9
 2.  `pip install -r requirements.txt`
 
-
 **Usage**
 ---
 
 ```
 Usage: python icmp_echo.py IP_ADDRESS
 ```
-
 
 **Run Tests**
 ---
