@@ -17,6 +17,7 @@ def test_icmp_success_on_windows():
         }
     )
 
+
 def test_different_ip_address_icmp_success_on_windows_with_different_ip():
     """
     Given a different ip address is provided,
@@ -32,6 +33,7 @@ def test_different_ip_address_icmp_success_on_windows_with_different_ip():
             'TTL': 115
         }
     )
+
 
 def test_slower_response_icmp_success_on_windows_with_slow_response_recorded():
     """
