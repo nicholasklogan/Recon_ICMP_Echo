@@ -1,4 +1,5 @@
-#
+__author__      = "Nicholas Logan"
+__copyright__   = "Copyright 2020, Nicholas Logan"
 
 def main(ping_command):
     def true_main(ip_address):

@@ -1,3 +1,6 @@
+__author__      = "Nicholas Logan"
+__copyright__   = "Copyright 2020, Nicholas Logan"
+
 import pytest
 
 import icmp_echo
