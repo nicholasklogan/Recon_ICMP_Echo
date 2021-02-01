@@ -8,7 +8,7 @@ def test_icmp_success_on_windows():
     Then the system returns the ip, bytes, time, and TTL of the ping call.
     """
     # Test / Verify
-    assert icmp_echo.main() == (
+    assert icmp_echo.main('8.8.8.8') == (
         {
             'ip': '8.8.8.8',
             'bytes': 32,
