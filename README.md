@@ -1,5 +1,11 @@
 _Currently configured for windows only._
 
+**Installation**
+---
+1. Install python >= 3.9
+2.  `pip install -r requirements.txt`
+
+
 **Usage**
 ---
 
@@ -7,11 +13,13 @@ _Currently configured for windows only._
 Usage: python icmp_echo.py IP_ADDRESS
 ```
 
-**Installation Options**
----
-1. Install python >= 3.9
-2.  `pip install -r requirements.txt`
 
+**Run Tests**
+---
+
+```
+Usage: pytest ./ -v
+```
 
 **Donations**
 ---
