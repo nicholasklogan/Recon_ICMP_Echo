@@ -38,6 +38,12 @@ import icmp_echo
             },
             id='Given a slower response from ping command, When main is called for icmp_echo, Then the system returns the ip, bytes,  and the slower response time, and TTL of the ping call.'
         ),
+        pytest.param(
+            'Request timed out.',
+            '8.8.8.8',
+            {},
+            id='Given an ip address with no server responding to ping command, When main is called for icmp_echo, Then the system returns an empty dictionary.'
+        ),
     ],
 )
 def test_icmp_on_windows(ping_response, ip_address, expected_response):
