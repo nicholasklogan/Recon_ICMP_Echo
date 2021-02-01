@@ -1,1 +1,4 @@
-main = None
+
+
+def main():
+    pass
